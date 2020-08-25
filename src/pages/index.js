@@ -15,6 +15,7 @@ const IndexPage = prop => {
             {edge.node.title} — <span>{edge.node.author.name}</span>
           </h2>
           <div>{edge.node.summary}</div>
+          <Link to={`/book/${edge.node.id}`}>Join conversation!</Link>
         </div>
       ))}
     </Layout>

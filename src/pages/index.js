@@ -2,21 +2,21 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import BookItem from "../components/BookItem"
 
 const IndexPage = prop => {
   console.log(prop)
   return (
     <Layout>
       {prop.data.allBook.edges.map(edge => (
-        <div key={edge.node.id}>
-          <h2>
-            {edge.node.title} — <span>{edge.node.author.name}</span>
-          </h2>
-          <div>{edge.node.summary}</div>
+        <BookItem
+          key={edge.node.id}
+          bookTitle={edge.node.title}
+          bookSummary={edge.node.summary}
+          authorName={edge.node.author.name}
+        >
           <Link to={`/book/${edge.node.id}`}>Join conversation!</Link>
-        </div>
+        </BookItem>
       ))}
     </Layout>
   )

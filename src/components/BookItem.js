@@ -9,6 +9,8 @@ const BookItemWrapper = styled.section`
   height: fit-content;
   padding: 32px;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
 
   h2 {
     span {
@@ -30,14 +32,40 @@ const BookItemWrapper = styled.section`
   }
 `
 
-const BookItem = ({ bookTitle, bookSummary, authorName, children }) => {
+const BookItemContent = styled.div`
+  display: block;
+  width: 75%;
+`
+
+const BookItemImg = styled.div`
+  width: 25%;
+  padding-left: 32px;
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+`
+
+const BookItem = ({
+  bookTitle,
+  bookCover,
+  bookSummary,
+  authorName,
+  children,
+}) => {
   return (
     <BookItemWrapper>
-      <h2>
-        {bookTitle} — <span>{authorName}</span>
-      </h2>
-      <p>{bookSummary}</p>
-      {children}
+      <BookItemContent>
+        <h2>
+          {bookTitle} — <span>{authorName}</span>
+        </h2>
+        <p>{bookSummary}</p>
+        {children}
+      </BookItemContent>
+      <BookItemImg>
+        <img src={bookCover} alt={`${bookTitle} book cover`} />
+      </BookItemImg>
     </BookItemWrapper>
   )
 }

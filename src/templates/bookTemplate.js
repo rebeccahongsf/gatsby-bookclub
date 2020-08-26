@@ -1,10 +1,14 @@
 import React from "react"
+import Layout from "../components/layout"
 
-const BookTemplate = () => {
+const BookTemplate = prop => {
   return (
-    <div>
-      <h2>Book Page</h2>
-    </div>
+    <Layout>
+      <h2>
+        {prop.pageContext.title} — <span>{prop.pageContext.author.name}</span>
+      </h2>
+      <p>{prop.pageContext.summary}</p>
+    </Layout>
   )
 }
 

@@ -10,15 +10,6 @@ exports.createPages = ({ graphql, actions }) => {
         edges {
           node {
             id
-            summary
-            title
-            localImage {
-              publicURL
-            }
-            author {
-              id
-              name
-            }
           }
         }
       }
@@ -32,7 +23,7 @@ exports.createPages = ({ graphql, actions }) => {
       createPage({
         path: `/book/${book.node.id}`,
         component: bookTemplate,
-        context: book.node,
+        context: { bookId: book.node.id },
       })
     })
   })

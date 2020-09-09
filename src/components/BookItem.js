@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import Img from "gatsby-image"
 
 const BookItemWrapper = styled.section`
   background: #fff;
@@ -64,7 +65,7 @@ const BookItem = ({
         {children}
       </BookItemContent>
       <BookItemImg>
-        <img src={bookCover} alt={`${bookTitle} book cover`} />
+        <Img fixed={bookCover} alt={`${bookTitle} book cover`} />
       </BookItemImg>
     </BookItemWrapper>
   )

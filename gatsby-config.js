@@ -52,6 +52,13 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: "Book",
+        imagePath: "imageUrl",
+      },
+    },
     `gatsby-plugin-styled-components`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

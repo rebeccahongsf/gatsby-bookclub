@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <FirebaseContext.Provider value={{ user, firebase, loading }}>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>
-    </>
+    </FirebaseContext.Provider>
   )
 }
 

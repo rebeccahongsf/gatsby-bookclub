@@ -8,11 +8,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { FirebaseContext, userAuth } from "./Firebase"
 
 import Header from "./header"
 import "./layout.css"
 
 const Layout = ({ children }) => {
+  const { user, firebase, loading } = userAuth()
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
